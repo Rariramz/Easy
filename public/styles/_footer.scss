@@ -1,0 +1,37 @@
+#footer {
+    background-image: url("../../images/footer.jpg");
+    height: 46px;
+}
+
+.footer {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 20px;
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    li {
+        padding-left: 5px;
+    }
+}
+
+.footer__email {
+    font-style: italic;
+}
+
+.footer__social-media {
+    margin-left: 43px;
+    @extend %flex-row-center;
+}
+
+.footer__logo {
+    margin-left: 43px;
+}

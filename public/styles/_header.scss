@@ -1,0 +1,48 @@
+#header {
+    background: url("../../images/header.jpg");
+    height: 70px;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+    @extend %flex-row-space-between;
+}
+
+.header {
+    width: 98%;
+    @extend %flex-row-space-between;
+}
+
+.header__left {
+    @extend %flex-row-space-between;
+}
+
+.header__logo {
+    padding-right: 63px;
+}
+
+.header__selects {
+    @extend %flex-row-space-between;
+}
+
+.select {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-right: 63px;
+}
+
+.select__label {
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.select__options {}
+
+.header__right {
+    @extend %flex-row-space-between;
+}
+
+.header__userBtn {
+    margin-left: 17px;
+}
