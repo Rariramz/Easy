@@ -29,6 +29,17 @@
     justify-content: flex-start;
     align-items: flex-start;
     margin-right: 63px;
+
+    select {
+        appearance: none;
+        background-color: transparent;
+        cursor: pointer;
+        font-size: 14px;
+        line-height: 16px;
+        color: $grey;
+    }
+
+    
 }
 
 .select__label {
@@ -38,6 +49,11 @@
 }
 
 .select__options {}
+
+.select__options:after {
+    content: "gfhfg";
+    background-image: url("../../images/arrow.svg")
+}
 
 .header__right {
     @extend %flex-row-space-between;

@@ -2,9 +2,9 @@
   "name": "easy",
   "version": "1.0.0",
   "description": "*Maria Bystrova 953501*",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "web-dev-server --node-resolve --open --watch"
   },
   "repository": {
     "type": "git",
