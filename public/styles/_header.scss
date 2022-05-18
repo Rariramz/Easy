@@ -1,8 +1,15 @@
 #header {
-    background: url("../../images/header.jpg");
-    height: 70px;
+    background: url("../../images/paper.jpg");
+    background-size: contain;
+    background-repeat: repeat;
     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
     @extend %flex-row-space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    overflow: hidden;
 }
 
 .header {
@@ -38,8 +45,6 @@
         line-height: 16px;
         color: $grey;
     }
-
-    
 }
 
 .select__label {

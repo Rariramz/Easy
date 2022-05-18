@@ -1,0 +1,82 @@
+.authorization {
+    height: 300px;
+    width: 510px;
+    background-image: url(../../images/paper.jpg);
+    background-size: contain;
+    background-repeat: repeat;
+    border-radius: 5PX;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+    @extend %flex-column-center;
+}
+
+.authorization__form {
+    height: 100%;
+    width: 100%;
+    padding: 40px 70px;
+    @extend %flex-column-space-between;
+}
+
+.authorization__title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: $grey;
+}
+
+.authorization__inputs {
+    width: 100%;
+    @extend %flex-column-space-between;
+
+    input {
+        width: 100%;
+        height: 40px;
+        border-radius: 50px;
+        background-color: rgba(0, 0, 0, 0.1);
+        box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.25);
+        margin-bottom: 15px;
+        padding: 8px 20px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+        color: $black;
+    }
+
+    input::placeholder {
+        color: $grey;
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+    }
+
+    input:last-child {
+        width: 100%;
+        margin-bottom: 0;
+    }
+}
+
+.authorization__buttons {
+    width: 100%;
+    @extend %flex-row-space-between;
+}
+
+.authorization__text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 300;
+    color: $grey;
+}
+
+.authorization__btn {
+    height: 40px;
+    width: 140px;
+    background-color: $grey;
+    color: #ffffff;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 300;
+}
