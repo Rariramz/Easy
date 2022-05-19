@@ -63,7 +63,8 @@
     display: inline-block;
     margin-bottom: 1px;
     height: 15px;
-    width: 45px;
+    min-width: 45px;
+    padding: 0 2px;
     border-radius: 5px;
     background-color: $pale-red;
     text-align: center;

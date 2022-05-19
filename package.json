@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Rariramz/Easy/issues"
   },
-  "homepage": "https://github.com/Rariramz/Easy#readme"
+  "homepage": "https://github.com/Rariramz/Easy#readme",
+  "devDependencies": {
+    "@web/dev-server": "^0.1.31"
+  }
 }
