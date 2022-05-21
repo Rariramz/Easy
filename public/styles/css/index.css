@@ -453,6 +453,9 @@ a, a:hover {
 }
 
 .task__summary {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   margin-top: -24px;
   -webkit-transform: translate(0, 6px);
           transform: translate(0, 6px);
