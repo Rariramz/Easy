@@ -3,13 +3,29 @@
     background-size: contain;
     background-repeat: repeat;
     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
-    @extend %flex-row-space-between;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 70px;
     overflow: hidden;
+    z-index: 1;
+}
+
+#header-additional-mobile {
+    display: none;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/paper.jpg");
+    background-size: contain;
+    background-repeat: repeat;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    height: 51px;
+    overflow: hidden;
+    border-radius: 0 0 30px 30px;
+    z-index: 0;
 }
 
 .header {
@@ -62,8 +78,32 @@
 
 .header__right {
     @extend %flex-row-space-between;
+
+    button {
+        background-color: transparent;
+    }
 }
 
 .header__userBtn {
     margin-left: 17px;
 }
+
+//BREAKPOINTS
+@media screen and (min-width: 1200px) {}
+  
+@media screen and (max-width: 1199px) {}
+
+@media screen and (max-width: 991px) {}
+
+@media screen and (max-width: 767px) {
+    #header-additional-mobile {
+        display: block;
+    }
+    .header__left .header__selects {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 575px) {}
+
+@media screen and (max-width: 400px) {}

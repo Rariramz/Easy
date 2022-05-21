@@ -6,6 +6,26 @@
     align-items: flex-start;
 }
 
+.notes__tags {
+    margin-bottom: -2px;
+    width: fit-content;
+    @extend %flex-row-start;
+    display: none;
+}
+
+.notes__tag {
+    @extend %flex-row-center;
+    height: 38px;
+    width: 70px;
+    background-color: $pale-purple;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.notes__tag_active {
+    z-index: 3;
+    box-shadow: 2px -1px 2px rgba(0, 0, 0, 0.25);
+}
+
 .notes__note {
     margin-right: 40px;
 }
@@ -52,7 +72,7 @@
     background-color: transparent;
 }
 
-.task__marks {
+.task__tags {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -152,3 +172,28 @@
     font-size: 16px;
     color: $light-grey;
 }
+
+//BREAKPOINTS
+@media screen and (min-width: 1200px) {}
+  
+@media screen and (max-width: 1199px) {
+}
+
+@media screen and (max-width: 991px) {}
+
+@media screen and (max-width: 767px) {
+}
+
+@media screen and (max-width: 575px) {
+    .notes__tags {
+        display: flex;
+    }
+    .notes {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}
+
+@media screen and (max-width: 400px) {}

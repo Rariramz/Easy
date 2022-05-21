@@ -11,11 +11,8 @@
 }
 
 .footer {
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    @extend %flex-row-space-between;
+    flex-wrap: wrap;
     line-height: 20px;
 
     ul {
@@ -31,7 +28,10 @@
 }
 
 .footer__email {
-    font-style: italic;
+    a {
+        font-style: italic;
+        font-weight: 500;
+    }
 }
 
 .footer__social-media {
@@ -42,3 +42,24 @@
 .footer__logo {
     margin-left: 43px;
 }
+
+//BREAKPOINTS
+@media screen and (min-width: 1200px) {}
+  
+@media screen and (max-width: 1199px) {}
+
+@media screen and (max-width: 991px) {}
+
+@media screen and (max-width: 767px) {
+    .footer__email {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .footer__logo {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {}

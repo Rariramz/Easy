@@ -54,3 +54,21 @@ html, body {
 a, a:hover {
     color: #000;
 }
+
+
+//BREAKPOINTS
+@media screen and (min-width: 1200px) {}
+  
+@media screen and (max-width: 1199px) {}
+
+@media screen and (max-width: 991px) {}
+
+@media screen and (max-width: 767px) {
+    #main {
+        top: 121px;
+    }
+}
+
+@media screen and (max-width: 575px) {}
+
+@media screen and (max-width: 400px) {}
