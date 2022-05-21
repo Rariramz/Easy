@@ -61,12 +61,16 @@
     @extend %flex-row-space-between;
 }
 
-.authorization__text {
+.authorization__tip {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     line-height: 20px;
     font-weight: 300;
     color: $grey;
+    
+    a {
+        font-weight: 400;
+    }
 }
 
 .authorization__btn {
