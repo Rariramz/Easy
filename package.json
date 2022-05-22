@@ -2,7 +2,7 @@
   "name": "easy",
   "version": "1.0.0",
   "description": "*Maria Bystrova 953501*",
-  "main": "index.html",
+  "main": "index.js",
   "scripts": {
     "start": "web-dev-server --node-resolve --open --watch"
   },

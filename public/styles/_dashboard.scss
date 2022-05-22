@@ -124,9 +124,22 @@
     cursor: pointer;
 }
 
+.task__summary_active, .task__details_active {
+    border: 1px solid #C4C4C4;
+    border-radius: 2px;
+    margin-top: 0;
+    width: 100%;
+    padding: 3px;
+}
+
 .task__details {
     margin-top: 12px;
     padding-inline: 12px;
+}
+
+.task__buttons {
+    width: 100%;
+    @extend %flex-row-space-between;
 }
 
 .task__paragraph {
@@ -160,11 +173,6 @@
     width: 25px;
     margin-right: 2px;
     @extend %custom-checkbox;
-}
-
-.task__deleteBtn {
-    display: block;
-    margin-left: auto;
 }
 
 .note__message {

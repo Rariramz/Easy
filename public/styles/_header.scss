@@ -12,7 +12,7 @@
     z-index: 1;
 }
 
-#header-additional-mobile {
+#header-extra {
     display: none;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/paper.jpg");
     background-size: contain;
@@ -39,6 +39,7 @@
 
 .header__logo {
     padding-right: 63px;
+    cursor: pointer;
 }
 
 .header__selects {
@@ -96,7 +97,10 @@
 @media screen and (max-width: 991px) {}
 
 @media screen and (max-width: 767px) {
-    #header-additional-mobile {
+    #header {
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+    }
+    #header-extra {
         display: block;
     }
     .header__left .header__selects {

@@ -94,7 +94,7 @@ summary {
           align-items: center;
 }
 
-.authorization__buttons, .footer, .header__right, .header__selects, .header__left, .header {
+.authorization__buttons, .footer, .header__right, .header__selects, .header__left, .header, .task__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -466,9 +466,21 @@ a, a:hover {
   cursor: pointer;
 }
 
+.task__summary_active, .task__details_active {
+  border: 1px solid #C4C4C4;
+  border-radius: 2px;
+  margin-top: 0;
+  width: 100%;
+  padding: 3px;
+}
+
 .task__details {
   margin-top: 12px;
   padding-inline: 12px;
+}
+
+.task__buttons {
+  width: 100%;
 }
 
 .task__paragraph {
@@ -508,11 +520,6 @@ a, a:hover {
   height: 25px;
   width: 25px;
   margin-right: 2px;
-}
-
-.task__deleteBtn {
-  display: block;
-  margin-left: auto;
 }
 
 .note__message {
@@ -560,7 +567,7 @@ a, a:hover {
   z-index: 1;
 }
 
-#header-additional-mobile {
+#header-extra {
   display: none;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.1))), url("../../images/paper.jpg");
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/paper.jpg");
@@ -584,6 +591,7 @@ a, a:hover {
 
 .header__logo {
   padding-right: 63px;
+  cursor: pointer;
 }
 
 .select {
@@ -634,7 +642,12 @@ a, a:hover {
 }
 
 @media screen and (max-width: 767px) {
-  #header-additional-mobile {
+  #header {
+    -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  }
+
+  #header-extra {
     display: block;
   }
 
@@ -797,6 +810,7 @@ a, a:hover {
 }
 .authorization__tip a {
   font-weight: 400;
+  cursor: pointer;
 }
 
 .authorization__btn {
@@ -809,6 +823,7 @@ a, a:hover {
   font-size: 16px;
   line-height: 24px;
   font-weight: 300;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 767px) {
