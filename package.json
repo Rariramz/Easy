@@ -1,0 +1,22 @@
+{
+  "name": "easy",
+  "version": "1.0.0",
+  "description": "*Maria Bystrova 953501*",
+  "main": "index.html",
+  "scripts": {
+    "start": "web-dev-server --node-resolve --open --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rariramz/Easy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rariramz/Easy/issues"
+  },
+  "homepage": "https://github.com/Rariramz/Easy#readme",
+  "devDependencies": {
+    "@web/dev-server": "^0.1.31"
+  }
+}

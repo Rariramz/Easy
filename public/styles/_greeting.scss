@@ -1,0 +1,89 @@
+.greeting-note {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 317px;
+    height: 319px;
+    background-image: url("../../images/note.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(-5.32deg);
+    z-index: 1;
+}
+
+.greeting-note__transparent-rotated-shadow-div {
+    margin-top: 16px;
+    width: 300px;
+    height: 283px;
+    box-shadow: -3px 5px 2px rgba(0, 0, 0, 0.25);
+    transform: rotate(-3.32deg);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    padding: 40px;
+}
+
+.greeting-note__content {
+    font-family: 'Grape Nuts', cursive;
+    font-size: 24px;
+    text-align: center;
+}
+
+.greeting-note__animated-link {
+    display: inline-block;
+    height: 40px;
+    font-size: 26px;
+    font-weight: bold;
+    transition: 0.1s ease-in;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.greeting-note__animated-link:hover {
+    transition: 0.1s ease-out;
+    font-size: 28px;
+}
+
+.animated-link
+{
+    background-image: linear-gradient(
+        -225deg,
+        #732099 0%,
+        #ff1361 15%,
+        #45b5f5 35%,
+        #45b412 45%,
+        #12b468 55%,
+        #45b5f5 70%,
+        #ff1361 85%,
+        #732099 100%,
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-clip: text;
+    background-size: 200% auto;
+    color: transparent;
+    animation: textclip 2s linear infinite alternate;
+    display: inline-block;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+//BREAKPOINTS
+@media screen and (min-width: 1200px) {}
+  
+@media screen and (max-width: 1199px) {}
+
+@media screen and (max-width: 991px) {}
+
+@media screen and (max-width: 767px) {}
+
+@media screen and (max-width: 575px) {}
+
+@media screen and (max-width: 400px) {}

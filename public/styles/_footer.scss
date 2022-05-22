@@ -1,0 +1,65 @@
+#footer {
+    background: url("../../images/paper.jpg");
+    background-size: contain;
+    background-repeat: repeat;
+    height: 46px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+.footer {
+    @extend %flex-row-space-between;
+    flex-wrap: wrap;
+    line-height: 20px;
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    li {
+        padding-left: 5px;
+    }
+}
+
+.footer__email {
+    a {
+        font-style: italic;
+        font-weight: 500;
+    }
+}
+
+.footer__social-media {
+    margin-left: 43px;
+    @extend %flex-row-center;
+}
+
+.footer__logo {
+    margin-left: 43px;
+}
+
+//BREAKPOINTS
+@media screen and (min-width: 1200px) {}
+  
+@media screen and (max-width: 1199px) {}
+
+@media screen and (max-width: 991px) {}
+
+@media screen and (max-width: 767px) {
+    .footer__email {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .footer__logo {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {}

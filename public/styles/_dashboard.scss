@@ -1,0 +1,200 @@
+.notes {
+    height: 100%;
+    width: 100%;
+    padding: 50px 60px;
+    @extend %flex-row-start;
+    align-items: flex-start;
+}
+
+.notes__tags {
+    margin-bottom: -2px;
+    width: fit-content;
+    @extend %flex-row-start;
+    display: none;
+}
+
+.notes__tag {
+    @extend %flex-row-center;
+    height: 38px;
+    width: 70px;
+    background-color: $pale-purple;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.notes__tag_active {
+    z-index: 3;
+    box-shadow: 2px -1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.notes__note {
+    margin-right: 40px;
+}
+
+.note {
+    background-color: $pale-purple;
+    min-width: 288px;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    @extend %flex-column-center;
+}
+
+.note__title {
+    padding-block: 17px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: $grey;
+}
+
+.note__tasks {
+    color: $grey;
+}
+
+.note__task {
+    cursor: grab;
+    width: 248px;
+    background-image: url("../../images/paper.jpg");
+    background-size: cover;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    min-height: 45px;
+    padding: 5px;
+    margin-bottom: 11px;
+}
+
+.note__task:last-child {
+    margin-bottom: 0;
+}
+
+.note__addBtn {
+    margin-top: 5px;
+    margin-left: auto;
+    background-color: transparent;
+}
+
+.task__tags {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.task__date {
+    display: inline-block;
+    margin-bottom: 1px;
+    height: 15px;
+    min-width: 45px;
+    padding: 0 2px;
+    border-radius: 5px;
+    background-color: $pale-red;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: $black;
+}
+
+.task__checkbox-div {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: flex-start;
+
+    label {
+        color: $grey;
+    }
+}
+
+.task__checkbox {
+    height: 35px;
+    width: 35px;
+    margin-left: 5px;
+    @extend %custom-checkbox;
+}
+
+.task__summary {
+    width: fit-content;
+    margin-top: -24px;
+    transform: translate(0, 6px);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $black;
+    cursor: pointer;
+}
+
+.task__details {
+    margin-top: 12px;
+    padding-inline: 12px;
+}
+
+.task__paragraph {
+    margin-bottom: 9px;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.task__subtasks {
+    li {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+    }
+}
+
+.task__subtask {
+    margin-bottom: 9px;
+    font-size: 16px;
+    line-height: 24px;
+    margin-right: 2px;
+}
+
+.task__subtask:last-child {
+    margin-bottom: 9px;
+}
+
+.subtask__checkbox {
+    height: 25px;
+    width: 25px;
+    margin-right: 2px;
+    @extend %custom-checkbox;
+}
+
+.task__deleteBtn {
+    display: block;
+    margin-left: auto;
+}
+
+.note__message {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: $light-grey;
+}
+
+//BREAKPOINTS
+@media screen and (min-width: 1200px) {}
+  
+@media screen and (max-width: 1199px) {
+}
+
+@media screen and (max-width: 991px) {}
+
+@media screen and (max-width: 767px) {
+}
+
+@media screen and (max-width: 575px) {
+    .notes__tags {
+        display: flex;
+    }
+    .notes {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}
+
+@media screen and (max-width: 400px) {}

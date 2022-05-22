@@ -1,0 +1,74 @@
+$black: #000000;
+$grey: #383838;
+$light-grey: #38383880;
+// For notes
+$pale-green: #d1f2b5;
+$pale-purple: #DBB5F2;
+$pale-blue: #B5D5F2;
+$pale-yellow: #f1f2b5;
+// For dates
+$pale-red: #ff000063;
+$pale-red: #e2e229;
+$pale-red: #e28d29c2;
+
+html, body {
+    background: fixed url("../../images/background.jpg") center repeat;
+    background-size: contain;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    color: $black;
+}
+
+#main {
+    @extend %flex-row-center;
+    position: absolute;
+    top: 70px;
+    bottom: 46px;
+    left: 0;
+    right: 0;
+    overflow: auto;
+}
+
+.container {
+    height: 100%;
+    min-width: 100%;
+    padding: 0 20px;
+    @extend %flex-row-center;
+ }
+
+::-webkit-scrollbar {
+    height: 10px;
+    background: $light-grey;
+}
+  
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $grey;
+    border-radius: 10px;
+
+}
+
+a, a:hover {
+    color: #000;
+}
+
+
+//BREAKPOINTS
+@media screen and (min-width: 1200px) {}
+  
+@media screen and (max-width: 1199px) {}
+
+@media screen and (max-width: 991px) {}
+
+@media screen and (max-width: 767px) {
+    #main {
+        top: 121px;
+    }
+}
+
+@media screen and (max-width: 575px) {}
+
+@media screen and (max-width: 400px) {}
