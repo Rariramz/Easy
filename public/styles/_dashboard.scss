@@ -1,6 +1,6 @@
 .notes {
     height: 100%;
-    width: 100%;
+    min-width: 100%;
     padding: 50px 60px;
     @extend %flex-row-start;
     align-items: flex-start;
@@ -17,7 +17,7 @@
     @extend %flex-row-center;
     height: 38px;
     width: 70px;
-    background-color: $pale-purple;
+    background-color: #ffffff;
     border-radius: 10px 10px 0px 0px;
 }
 
@@ -30,8 +30,12 @@
     margin-right: 40px;
 }
 
+.notes__note:last-child {
+    margin-right: 0;
+}
+
 .note {
-    background-color: $pale-purple;
+    background-color: #ffffff;
     min-width: 288px;
     box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;

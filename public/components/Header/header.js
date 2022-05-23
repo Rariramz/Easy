@@ -1,20 +1,18 @@
 import { renderSelect } from "./select.js";
+import { getSelects } from "../../utils/api.js";
 
 export const renderHeader = () => {
-    const selects = [
-        {name: "Workspace", options: ["Work", "Study"]},
-        {name: "Board", options: ["Project One", "Project Two"]},
-    ];
+  const selects = getSelects();
 
-    return `
+  return `
     <div class="container">
         <div class="header">
-            <div class="header__left">
+            <div id="headerLeft" class="header__left">
                 <a id="headerLinkLogo">
                     <img class="header__logo" src="./images/logo.svg">
                 </a>
                 <nav class="header__selects">
-                    ${selects.map(select => renderSelect(select)).join("")}
+                    ${selects.map((select) => renderSelect(select)).join("")}
                 </nav>
             </div>
             <div class="header__right">
@@ -27,5 +25,5 @@ export const renderHeader = () => {
             </div>
         </div>
     </div>
-    `
+    `;
 };

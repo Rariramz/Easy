@@ -1,26 +1,18 @@
 import { renderTask } from "./task.js";
+import { getSectionTasks } from "../../utils/api.js";
 
-export const renderSection = ({ name }) => {
-    let mockTasks = [
-        {date: "18 мар", summary: "First task", details: [
-            {tag: "p", content: "Useful description"},
-            {tag: "p", content: "Even more useful description"},
-            {tag: "ul", content: ["First subtusk", "Second subtask", "Third.."]},
-        ]},
-        {date: "19 мар", summary: "Second task", details: []},
-        {date: "20 мар", summary: "Third task", details: []},
-    ];
-    const tasks = mockTasks;
+export const renderSection = ({ name, id, color }) => {
+  const tasks = getSectionTasks(id);
 
-    return `
-    <section class="notes__note note">
+  return `
+    <section class="notes__note note" style="background-color: ${color}">
         <h2 class="note__title">${name}</h2>
-        <div class="note__tasks">
-            ${tasks.map(task => renderTask(task)).join("")}
+        <div class="note__tasks" id=${id}>
+            ${tasks.map((task) => renderTask(task)).join("")}
         </div>
         <button id="noteAddBtn" class="note__addBtn">
             <img src="./images/note/add.svg">
         </button>
     </section>
-    `
+    `;
 };

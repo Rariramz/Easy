@@ -1,26 +1,23 @@
 import { renderSection } from "./section.js";
+import { getSections } from "../../utils/api.js";
 
 export const renderDashboard = () => {
-    const sections = [
-        {name: "To Do"},
-        {name: "In Process"},
-        {name: "Completed"},
-        {name: "Archived"},
-    ];
+  const sections = getSections();
 
+  const renderTag = (tagId, color) => {
     return `
+    <div class="notes__tag" id=${tagId} style="background-color: ${color}"></div>
+    `;
+  };
+
+  return `
     <div class="notes">
         <div class="notes__tags">
-            <div class="notes__tag">
-            </div>
-            <div class="notes__tag notes__tag_active">
-            </div>
-            <div class="notes__tag">
-            </div>
-            <div class="notes__tag">
-            </div>
+           ${sections
+             .map((section) => renderTag(section.tagId, section.color))
+             .join("")} 
         </div>
-        ${sections.map(section => renderSection(section)).join("")}
+        ${sections.map((section) => renderSection(section)).join("")}
     </div>
-    `
+    `;
 };

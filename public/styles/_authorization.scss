@@ -75,7 +75,13 @@
     }
 }
 
+.authorization__error  {
+    font-weight: 400;
+    color: crimson;
+}
+
 .authorization__btn {
+    transition: 0.2s ease-in;
     height: 40px;
     width: 140px;
     background-color: $grey;
@@ -84,8 +90,15 @@
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     line-height: 24px;
-    font-weight: 300;
+    font-weight: 400;
     cursor: pointer;
+}
+
+.authorization__btn:hover {
+    transition: color 0.4s ease-out;
+    color: $grey;
+    background-color: transparent;
+    border: 2px solid $grey;
 }
 
 //BREAKPOINTS
