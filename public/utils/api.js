@@ -109,14 +109,3 @@ export const getSectionTasks = (id) => {
     },
   ];
 };
-
-// AUTHORIZATION
-export const signIn = (email, password) => {
-  alert(`LOGGED IN: ${email}, ${password}`);
-  // LOGIN
-};
-
-export const signUp = (email, password) => {
-  alert(`REGISTERED: ${email}, ${password}`);
-  // REGISTER
-};

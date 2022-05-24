@@ -2,7 +2,7 @@ import { ROOT_MAIN } from "../utils/roots.js";
 import { renderSignUp } from "../components/Authorization/signUp.js";
 import { bindDashboard } from "./bindDashboard.js";
 import { bindSignIn } from "./bindSignIn.js";
-import { signUp, signIn } from "../utils/api.js";
+import { signup, signin } from "../utils/firebase.js";
 
 export const bindSignUp = () => {
   ROOT_MAIN.innerHTML = renderSignUp();
@@ -15,18 +15,23 @@ export const bindSignUp = () => {
   const inputPassword = document.getElementById("inputPassword");
   const authorizationError = document.getElementById("authorizationError");
 
-  const register = (email, password) => {
+  const register = async (email, password) => {
     authorizationError.hidden = true;
-
-    if (email && password) {
-      signUp(email, password);
-      inputEmail.value = "";
-      inputPassword.value = "";
-      signIn(email, password);
-      bindDashboard();
-    } else {
+    try {
+      if (email && password) {
+        const userCredentials = await signup(email, password);
+        console.log(userCredentials);
+        await updateLocalStorage();
+        inputEmail.value = "";
+        inputPassword.value = "";
+        // await signin(email, password);
+        bindDashboard();
+      } else {
+        throw new Error("Fill in all fields, please!");
+      }
+    } catch (error) {
       authorizationError.hidden = false;
-      authorizationError.textContent = "Fill in all fields, please!";
+      authorizationError.textContent = `${error.message}`;
     }
   };
 
@@ -38,4 +43,14 @@ export const bindSignUp = () => {
     e.preventDefault();
     register(inputEmail.value, inputPassword.value);
   });
+};
+
+export const updateLocalStorage = async () => {
+  // const uid = JSON.parse(localStorage.getItem("uid"));
+  // const workspaces = await getWorkspaces(uid);
+  // const boards = await getBoards(uid);
+  // localStorage.setItem("workspaces", JSON.stringify(workspaces || {}));
+  // localStorage.setItem("boards", JSON.stringify(boards || {}));
+  // localStorage.setItem("currentWorkspace", JSON.stringify({}));
+  // localStorage.setItem("currentBoard", JSON.stringify({}));
 };
