@@ -76,7 +76,7 @@ export const getSections = () => {
 export const getSectionTasks = (id) => {
   return [
     {
-      date: "18 мар",
+      date: "2022-05-26",
       summary: "First task",
       details: [
         { tag: "p", content: "Useful description" },
@@ -89,7 +89,7 @@ export const getSectionTasks = (id) => {
       ],
     },
     {
-      date: "19 мар",
+      date: "2022-06-04",
       summary: "Second task",
       details: [
         { tag: "ul", content: ["First subtusk", "Second subtask", "Third.."] },
@@ -100,7 +100,7 @@ export const getSectionTasks = (id) => {
       ],
     },
     {
-      date: "20 мар",
+      date: "2022-06-10",
       summary: "Third task",
       details: [
         { tag: "p", content: "Useful description" },

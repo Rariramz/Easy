@@ -1,7 +1,7 @@
 import { ROOT_HEADER_EXTRA } from "../utils/roots.js";
 import { renderHeaderExtra } from "../components/Header/headerExtra.js";
 
-export const makeHeaderExtra = () => {
+export const bindHeaderExtra = () => {
   ROOT_HEADER_EXTRA.innerHTML = renderHeaderExtra();
 
   const nav = document.getElementsByClassName("header__selects")[0];

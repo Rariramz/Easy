@@ -1,7 +1,7 @@
 import { ROOT_HEADER } from "../utils/roots.js";
 import { renderHeader } from "../components/Header/header.js";
-import { makeSignIn } from "./signIn.js";
-import { makeDashboard } from "./dashboard.js";
+import { bindSignIn } from "./bindSignIn.js";
+import { bindDashboard } from "./bindDashboard.js";
 import {
   CHOSEN_WORKSPACE_ID,
   CHOSEN_BOARD_ID,
@@ -9,7 +9,7 @@ import {
   OPTIONS_BOARD_ID,
 } from "../utils/dynamicIds.js";
 
-export const makeHeader = () => {
+export const bindHeader = () => {
   ROOT_HEADER.innerHTML = renderHeader();
 
   const headerLinkLogo = document.getElementById("headerLinkLogo");
@@ -19,23 +19,45 @@ export const makeHeader = () => {
   const chosenBoard = document.getElementById(CHOSEN_BOARD_ID);
   const workspaceOptions = document.getElementById(OPTIONS_WORKSPACE_ID);
   const boardOptions = document.getElementById(OPTIONS_BOARD_ID);
+  const workspaceOptionsArray = workspaceOptions.getElementsByTagName("input");
+  const boardOptionsArray = boardOptions.getElementsByTagName("input");
+
+  document.addEventListener("keydown", (e) => {
+    if (e.code == "Escape") {
+      workspaceOptions.open = false;
+      boardOptions.open = false;
+    }
+  });
 
   headerLinkLogo.addEventListener("click", (e) => {
     e.preventDefault();
-    makeDashboard();
+    bindDashboard();
   });
   headerBtnNightMode.addEventListener("click", (e) => {
     e.preventDefault();
-    alert("NIGHT MODE");
+    const element = document.body;
+    element.classList.toggle("dark-mode");
+    alert("Dark Mode Soon!^");
   });
   headerBtnUser.addEventListener("click", (e) => {
     e.preventDefault();
-    makeSignIn();
+    bindSignIn();
   });
+
+  const addEventListenersOnOption = (option) => {
+    option.addEventListener("dblclick", (e) => {
+      const targetWorkspace = e.target;
+      targetWorkspace.readOnly = false;
+    });
+
+    option.addEventListener("blur", (e) => {
+      const targetWorkspace = e.target;
+      targetWorkspace.readOnly = true;
+    });
+  };
 
   // WORKSPACE
   workspaceOptions.addEventListener("click", (e) => {
-    boardOptions.removeAttribute("open");
     switch (e.target.tagName) {
       case "INPUT": {
         const targetWorkspace = e.target.value;
@@ -46,38 +68,25 @@ export const makeHeader = () => {
       case "IMG": {
         const newWorkspace = document.createElement("input");
         newWorkspace.value = "New";
-        newWorkspace.readOnly = true;
+        newWorkspace.readOnly = false;
         const addBtn = workspaceOptions.getElementsByTagName("button")[0];
         const div = workspaceOptions.getElementsByClassName("options")[0];
         div.insertBefore(newWorkspace, addBtn);
-        // newWorkspace.focus();
+        newWorkspace.focus();
+
+        addEventListenersOnOption(newWorkspace);
         break;
         // ADD NEW WORKSPACE TO DB
       }
     }
   });
 
-  workspaceOptions.addEventListener("dblclick", (e) => {
-    if (e.target.tagName) {
-      const targetWorkspace = e.target;
-      targetWorkspace.readOnly = false;
-    }
-  });
-
-  workspaceOptions.addEventListener("change", (e) => {
-    if (e.target.tagName) {
-      const targetWorkspace = e.target;
-      // CHANGE NAME OF the workspace IN DB
-      targetWorkspace.readOnly = true;
-      chosenWorkspace.textContent = targetWorkspace.value;
-      workspaceOptions.removeAttribute("open");
-    }
-  });
+  [...workspaceOptionsArray].forEach((option) =>
+    addEventListenersOnOption(option)
+  );
 
   // BOARD
   boardOptions.addEventListener("click", (e) => {
-    workspaceOptions.removeAttribute("open");
-
     switch (e.target.tagName) {
       case "INPUT": {
         const targetBoard = e.target.value;
@@ -87,31 +96,23 @@ export const makeHeader = () => {
       case "IMG": {
         const newBoard = document.createElement("input");
         newBoard.value = "New";
-        newBoard.readOnly = true;
+        newBoard.readOnly = false;
         const addBtn = boardOptions.getElementsByTagName("button")[0];
         const div = boardOptions.getElementsByClassName("options")[0];
         div.insertBefore(newBoard, addBtn);
         newBoard.focus();
-        break;
+
+        newBoard.addEventListener("dblclick", (e) => {
+          newBoard.readOnly = false;
+        });
+
+        newBoard.addEventListener("blur", (e) => {
+          newBoard.readOnly = true;
+        });
         // ADD NEW BOARD TO DB
       }
     }
   });
 
-  boardOptions.addEventListener("dblclick", (e) => {
-    if (e.target.tagName) {
-      const targetBoard = e.target;
-      targetBoard.readOnly = false;
-    }
-  });
-
-  boardOptions.addEventListener("change", (e) => {
-    if (e.target.tagName) {
-      const targetBoard = e.target;
-      // CHANGE NAME OF the board IN DB
-      targetBoard.readOnly = true;
-      chosenBoard.textContent = targetBoard.value;
-    }
-    boardOptions.removeAttribute("open");
-  });
+  [...boardOptionsArray].forEach((option) => addEventListenersOnOption(option));
 };

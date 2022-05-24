@@ -15,7 +15,7 @@ export const renderDashboard = () => {
         <div class="notes__tags">
            ${sections
              .map((section) => renderTag(section.tagId, section.color))
-             .join("")} 
+             .join("")}
         </div>
         ${sections.map((section) => renderSection(section)).join("")}
     </div>

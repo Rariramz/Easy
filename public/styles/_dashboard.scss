@@ -66,12 +66,7 @@
     margin-bottom: 11px;
 }
 
-.note__task:last-child {
-    margin-bottom: 0;
-}
-
 .note__addBtn {
-    margin-top: 5px;
     margin-left: auto;
     background-color: transparent;
 }
@@ -90,7 +85,7 @@
     min-width: 45px;
     padding: 0 2px;
     border-radius: 5px;
-    background-color: $pale-red;
+    background-color: $green;
     text-align: center;
     font-size: 12px;
     font-weight: 400;
@@ -129,16 +124,24 @@
 }
 
 .task__summary_active, .task__details_active {
-    border: 1px solid #C4C4C4;
-    border-radius: 2px;
-    margin-top: 0;
-    width: 100%;
+    border: 2px solid #C4C4C4;
+    border-radius: 5px;
     padding: 3px;
 }
 
 .task__details {
     margin-top: 12px;
-    padding-inline: 12px;
+    padding: 5px 5px;   
+    margin-bottom: 5px; 
+    min-height: 24px;
+}
+
+.details__buttons {
+    @extend %flex-row-space-between;
+    width: 60px;
+}
+.hidden {
+    display: none;
 }
 
 .task__buttons {
@@ -146,10 +149,23 @@
     @extend %flex-row-space-between;
 }
 
+.main__buttons {
+    margin-left: auto;
+    @extend %flex-row-space-between;
+    width: 60px;
+}
+
+.task__deleteBtn {
+    margin-left: auto;
+}
+
 .task__paragraph {
     margin-bottom: 9px;
     font-size: 14px;
     line-height: 16px;
+}
+.task__paragraph:last-child {
+    margin-bottom: 0px;
 }
 
 .task__subtasks {

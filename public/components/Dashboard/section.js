@@ -10,7 +10,7 @@ export const renderSection = ({ name, id, color }) => {
         <div class="note__tasks" id=${id}>
             ${tasks.map((task) => renderTask(task)).join("")}
         </div>
-        <button id="noteAddBtn" class="note__addBtn">
+        <button class="note__addBtn">
             <img src="./images/note/add.svg">
         </button>
     </section>

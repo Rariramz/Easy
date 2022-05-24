@@ -96,7 +96,7 @@ summary, details {
           align-items: center;
 }
 
-.task__buttons, .header, .header__left, .header__selects, .header__right, .footer, .authorization__buttons {
+.details__buttons, .task__buttons, .main__buttons, .header, .header__left, .header__selects, .header__right, .footer, .authorization__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -193,6 +193,10 @@ summary, details {
 }
 
 html, body {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   background: fixed url("../../images/background.jpg") center repeat;
   background-size: contain;
   font-family: 'Poppins', sans-serif;
@@ -407,12 +411,7 @@ a, a:hover {
   margin-bottom: 11px;
 }
 
-.note__task:last-child {
-  margin-bottom: 0;
-}
-
 .note__addBtn {
-  margin-top: 5px;
   margin-left: auto;
   background-color: transparent;
 }
@@ -440,7 +439,7 @@ a, a:hover {
   min-width: 45px;
   padding: 0 2px;
   border-radius: 5px;
-  background-color: #e28d29c2;
+  background-color: #47e257c2;
   text-align: center;
   font-size: 12px;
   font-weight: 400;
@@ -491,26 +490,47 @@ a, a:hover {
 }
 
 .task__summary_active, .task__details_active {
-  border: 1px solid #C4C4C4;
-  border-radius: 2px;
-  margin-top: 0;
-  width: 100%;
+  border: 2px solid #C4C4C4;
+  border-radius: 5px;
   padding: 3px;
 }
 
 .task__details {
   margin-top: 12px;
-  padding-inline: 12px;
+  padding: 5px 5px;
+  margin-bottom: 5px;
+  min-height: 24px;
+}
+
+.details__buttons {
+  width: 60px;
+}
+
+.hidden {
+  display: none;
 }
 
 .task__buttons {
   width: 100%;
 }
 
+.main__buttons {
+  margin-left: auto;
+  width: 60px;
+}
+
+.task__deleteBtn {
+  margin-left: auto;
+}
+
 .task__paragraph {
   margin-bottom: 9px;
   font-size: 14px;
   line-height: 16px;
+}
+
+.task__paragraph:last-child {
+  margin-bottom: 0px;
 }
 
 .task__subtasks li {
@@ -576,8 +596,8 @@ a, a:hover {
   }
 }
 
-#header {
-  background: url("../../images/paper.jpg");
+.rootHeader {
+  background-image: url("../../images/paper.jpg");
   background-size: contain;
   background-repeat: repeat;
   -webkit-box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
@@ -591,7 +611,7 @@ a, a:hover {
   z-index: 11;
 }
 
-#header-extra {
+.rootHeaderExtra {
   display: none;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.1))), url("../../images/paper.jpg");
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/paper.jpg");

@@ -16,7 +16,7 @@ export const renderSelect = ({ name, idChosen, idOptions }) => {
         <summary class="pseudo-select__chosen"><span id=${idChosen}>Work</span><img src="./images/arrow.svg"></summary>
         <div class="pseudo-select__options options">
             ${options.map((option) => renderOption(option)).join("")}
-            <button>
+            <button class="options__addBtn">
                 <img src="./images/note/add.svg">
             </button>
         </div>

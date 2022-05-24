@@ -1,10 +1,10 @@
 import { ROOT_MAIN } from "../utils/roots.js";
 import { renderSignUp } from "../components/Authorization/signUp.js";
-import { makeDashboard } from "./dashboard.js";
-import { makeSignIn } from "./signIn.js";
+import { bindDashboard } from "./bindDashboard.js";
+import { bindSignIn } from "./bindSignIn.js";
 import { signUp, signIn } from "../utils/api.js";
 
-export const makeSignUp = () => {
+export const bindSignUp = () => {
   ROOT_MAIN.innerHTML = renderSignUp();
 
   const authLinkSignIn = document.getElementById("authLinkSignIn");
@@ -23,7 +23,7 @@ export const makeSignUp = () => {
       inputEmail.value = "";
       inputPassword.value = "";
       signIn(email, password);
-      makeDashboard();
+      bindDashboard();
     } else {
       authorizationError.hidden = false;
       authorizationError.textContent = "Fill in all fields, please!";
@@ -32,7 +32,7 @@ export const makeSignUp = () => {
 
   authLinkSignIn.addEventListener("click", (e) => {
     e.preventDefault();
-    makeSignIn();
+    bindSignIn();
   });
   authInputSubmitSignUp.addEventListener("click", (e) => {
     e.preventDefault();

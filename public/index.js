@@ -20,10 +20,10 @@
 //   COMPONENT_SIGNIN,
 //   COMPONENT_SIGNUP,
 // } from "./utils/componentsNames.js";
-import { makeHeader } from "./DOM/header.js";
-import { makeHeaderExtra } from "./DOM/headerExtra.js";
-import { makeFooter } from "./DOM/footer.js";
-import { makeGreeting } from "./DOM/greeting.js";
+import { bindHeader } from "./DOM/bindHeader.js";
+import { bindHeaderExtra } from "./DOM/bindHeaderExtra.js";
+import { bindFooter } from "./DOM/bindFooter.js";
+import { bindGreeting } from "./DOM/bindGreeting.js";
 // import { makeSignIn } from "./DOM/signIn.js";
 // import { makeSignUp } from "./DOM/signUp.js";
 // import { makeDashboard } from "./DOM/dashboard.js";
@@ -49,7 +49,7 @@ import { makeGreeting } from "./DOM/greeting.js";
 //   }
 // };
 
-makeHeader();
-makeHeaderExtra();
-makeFooter();
-makeGreeting();
+bindHeader();
+bindHeaderExtra();
+bindFooter();
+bindGreeting();
