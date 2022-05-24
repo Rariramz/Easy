@@ -9,7 +9,6 @@
     background-size: contain;
     background-repeat: no-repeat;
     transform: rotate(-5.32deg);
-    z-index: 1;
 }
 
 .greeting-note__transparent-rotated-shadow-div {
@@ -22,7 +21,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    z-index: 2;
     padding: 40px;
 }
 
@@ -51,20 +49,20 @@
 {
     background-image: linear-gradient(
         -225deg,
-        #732099 0%,
         #ff1361 15%,
-        #45b5f5 35%,
+        #457df5 35%,
         #45b412 45%,
         #12b468 55%,
-        #45b5f5 70%,
+        #456ef5 70%,
         #ff1361 85%,
-        #732099 100%,
     );
     background-size: auto auto;
     background-clip: border-box;
     background-clip: text;
     background-size: 200% auto;
     color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     animation: textclip 2s linear infinite alternate;
     display: inline-block;
 }
