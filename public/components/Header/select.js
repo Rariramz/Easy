@@ -1,8 +1,4 @@
-import { getOptions } from "../../utils/api.js";
-
-export const renderSelect = ({ name, idChosen, idOptions }) => {
-  const options = getOptions(idChosen);
-
+export const renderSelect = ({ name, idChosen, idOptions, options }) => {
   const renderOption = (option) => {
     return `
     <input value=${option} readonly>
@@ -15,9 +11,11 @@ export const renderSelect = ({ name, idChosen, idOptions }) => {
     <details id=${idOptions} class="pseudo-select__content">
         <summary class="pseudo-select__chosen"><span id=${idChosen}>Work</span><img src="./images/arrow.svg"></summary>
         <div class="pseudo-select__options options">
-            ${options.map((option) => renderOption(option)).join("")}
+            ${Object.values(options)
+              .map((option) => renderOption(option.name))
+              .join("")}
             <button class="options__addBtn">
-                <img src="./images/note/add.svg">
+                <img class="options__addBtn" src="./images/note/add.svg">
             </button>
         </div>
     </details>

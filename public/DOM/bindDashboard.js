@@ -100,7 +100,7 @@ export const bindDashboard = () => {
           details: [{ tag: "p", content: "New" }],
         }),
         "text/html"
-      ).body;
+      ).body.firstChild;
       divTasks.append(newTask);
 
       bindTask(newTask);

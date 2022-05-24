@@ -66,17 +66,19 @@ export const bindHeader = () => {
         break;
       }
       case "IMG": {
-        const newWorkspace = document.createElement("input");
-        newWorkspace.value = "New";
-        newWorkspace.readOnly = false;
-        const addBtn = workspaceOptions.getElementsByTagName("button")[0];
-        const div = workspaceOptions.getElementsByClassName("options")[0];
-        div.insertBefore(newWorkspace, addBtn);
-        newWorkspace.focus();
+        if (e.target.classList.contains("options__addBtn")) {
+          const newWorkspace = document.createElement("input");
+          newWorkspace.value = "New";
+          newWorkspace.readOnly = false;
+          const addBtn = workspaceOptions.getElementsByTagName("button")[0];
+          const div = workspaceOptions.getElementsByClassName("options")[0];
+          div.insertBefore(newWorkspace, addBtn);
+          newWorkspace.focus();
 
-        addEventListenersOnOption(newWorkspace);
-        break;
-        // ADD NEW WORKSPACE TO DB
+          addEventListenersOnOption(newWorkspace);
+          break;
+          // ADD NEW WORKSPACE TO DB
+        }
       }
     }
   });
@@ -94,22 +96,24 @@ export const bindHeader = () => {
         break;
       }
       case "IMG": {
-        const newBoard = document.createElement("input");
-        newBoard.value = "New";
-        newBoard.readOnly = false;
-        const addBtn = boardOptions.getElementsByTagName("button")[0];
-        const div = boardOptions.getElementsByClassName("options")[0];
-        div.insertBefore(newBoard, addBtn);
-        newBoard.focus();
-
-        newBoard.addEventListener("dblclick", (e) => {
+        if (e.target.classList.contains("options__addBtn")) {
+          const newBoard = document.createElement("input");
+          newBoard.value = "New";
           newBoard.readOnly = false;
-        });
+          const addBtn = boardOptions.getElementsByTagName("button")[0];
+          const div = boardOptions.getElementsByClassName("options")[0];
+          div.insertBefore(newBoard, addBtn);
+          newBoard.focus();
 
-        newBoard.addEventListener("blur", (e) => {
-          newBoard.readOnly = true;
-        });
-        // ADD NEW BOARD TO DB
+          newBoard.addEventListener("dblclick", (e) => {
+            newBoard.readOnly = false;
+          });
+
+          newBoard.addEventListener("blur", (e) => {
+            newBoard.readOnly = true;
+          });
+          // ADD NEW BOARD TO DB
+        }
       }
     }
   });
