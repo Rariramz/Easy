@@ -1,5 +1,13 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.0/firebase-app.js";
-import { getDatabase } from "https://www.gstatic.com/firebasejs/9.8.0/firebase-database.js";
+import {
+  getDatabase,
+  set,
+  ref,
+  remove,
+  get,
+  child,
+  update,
+} from "https://www.gstatic.com/firebasejs/9.8.0/firebase-database.js";
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -23,7 +31,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 // Get a reference to the database service
-const database = getDatabase(app);
+const db = getDatabase(app);
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
 
@@ -31,3 +39,88 @@ const auth = getAuth(app);
 export const signin = signInWithEmailAndPassword.bind(null, auth);
 export const signup = createUserWithEmailAndPassword.bind(null, auth);
 export const signout = async () => signOut.bind(null, auth);
+
+// WORKSPACES
+export const createWorkspace = async (userId, name) => {
+  const refWorkspaces = "users" + "/" + userId + "/workspaces";
+  const workspaceRef = ref(db, refWorkspaces + "/" + name);
+  set(workspaceRef, {
+    name,
+  });
+};
+
+export const deleteWorkspace = async (userId, name) => {
+  const refWorkspaces = "users" + "/" + userId + "/workspaces";
+  const workspaceRef = ref(db, refWorkspaces + "/" + name);
+  remove(workspaceRef);
+};
+
+export const getWorkspaces = async (userId) => {
+  const refWorkspaces = "users" + "/" + userId + "/workspaces";
+  const dbRef = ref(db);
+  return get(child(dbRef, refWorkspaces)).then((snapshot) => snapshot.val());
+};
+
+export const getWorkspace = async (userId, name) => {
+  const refWorkspaces = "users" + "/" + userId + "/workspaces";
+  const dbRef = ref(db);
+  return get(child(dbRef, refWorkspaces + "/" + name)).then((snapshot) =>
+    snapshot.val()
+  );
+};
+
+export const editWorkspace = async (userId, name, newName) => {
+  const refWorkspaces = "users" + "/" + userId + "/workspaces";
+  const dbRef = ref(db);
+  const updates = {};
+  updates[refWorkspaces + "/" + name + "/name"] = newName;
+  return update(dbRef, updates);
+};
+
+// BOARDS
+export const createBoard = async (userId, name, workspaceName) => {
+  const refBoards =
+    "users" + "/" + userId + "/workspaces" + "/" + workspaceName + "/boards";
+  const boardRef = ref(db, refBoards + "/" + name);
+  set(boardRef, {
+    name,
+  });
+};
+
+export const deleteBoard = async (userId, name, workspaceName) => {
+  const refBoards =
+    "users" + "/" + userId + "/workspaces" + "/" + workspaceName + "/boards";
+  const boardRef = ref(db, refBoards + "/" + name);
+  remove(boardRef);
+};
+
+export const getBoards = async (userId, workspaceName) => {
+  const refBoards =
+    "users" + "/" + userId + "/workspaces" + "/" + workspaceName + "/boards";
+  const dbRef = ref(db);
+  return get(child(dbRef, refBoards)).then((snapshot) => snapshot.val());
+};
+
+export const getBoard = async (userId, name, workspaceName) => {
+  const refBoards =
+    "users" + "/" + userId + "/workspaces" + "/" + workspaceName + "/boards";
+  const dbRef = ref(db);
+  return get(child(dbRef, refBoards + "/" + name)).then((snapshot) =>
+    snapshot.val()
+  );
+};
+
+export const editBoard = async (userId, name, newName) => {
+  const refBoards =
+    "users" + "/" + userId + "/workspaces" + "/" + workspaceName + "/boards";
+  const dbRef = ref(db);
+  const updates = {};
+  updates[refBoards + "/" + name + "/name"] = newName;
+  return update(dbRef, updates);
+};
+
+// SECTIONS
+
+// TASKS
+
+// SUBTASKS

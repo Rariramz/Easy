@@ -2,7 +2,7 @@ import { ROOT_MAIN } from "../utils/roots.js";
 import { renderSignIn } from "../components/Authorization/signIn.js";
 import { bindDashboard } from "./bindDashboard.js";
 import { bindSignUp } from "./bindSignUp.js";
-import { signin } from "../utils/firebase.js";
+import { signin, getWorkspaces } from "../utils/firebase.js";
 
 export const bindSignIn = () => {
   ROOT_MAIN.innerHTML = renderSignIn();
@@ -14,6 +14,15 @@ export const bindSignIn = () => {
   const inputEmail = document.getElementById("inputEmail");
   const inputPassword = document.getElementById("inputPassword");
   const authorizationError = document.getElementById("authorizationError");
+
+  const updateLocalStorage = async () => {
+    const uid = JSON.parse(localStorage.getItem("uid"));
+    const workspaces = await getWorkspaces(uid);
+    localStorage.setItem("workspaces", JSON.stringify(workspaces || {}));
+    localStorage.setItem("currentWorkspace", JSON.stringify({}));
+    localStorage.setItem("currentWorkspaceBoards", JSON.stringify({}));
+    localStorage.setItem("currentBoard", JSON.stringify({}));
+  };
 
   const login = async (email, password) => {
     authorizationError.hidden = true;
@@ -43,14 +52,4 @@ export const bindSignIn = () => {
     e.preventDefault();
     login(inputEmail.value, inputPassword.value);
   });
-};
-
-export const updateLocalStorage = async () => {
-  // const uid = JSON.parse(localStorage.getItem("uid"));
-  // const workspaces = await getWorkspaces(uid);
-  // const boards = await getBoards(uid);
-  // localStorage.setItem("workspaces", JSON.stringify(workspaces || {}));
-  // localStorage.setItem("boards", JSON.stringify(boards || {}));
-  // localStorage.setItem("currentWorkspace", JSON.stringify({}));
-  // localStorage.setItem("currentBoard", JSON.stringify({}));
 };
