@@ -65,8 +65,8 @@ export const renderTask = ({ summary, details, date = null }) => {
         <div class="task__tags">
             ${renderDate(date)}
             <div class="task__checkbox-div">
-                <label for="a">1/3</label>
-                <input class="task__checkbox" type="checkbox" id="a">
+                <label>1/3</label>
+                <input class="task__checkbox" type="checkbox">
             </div>
         </div>
         <details class="task__description">
