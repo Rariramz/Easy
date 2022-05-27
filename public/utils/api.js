@@ -21,40 +21,25 @@ import {
   OPTIONS_BOARD_ID,
 } from "./dynamicIds.js";
 
-export const getObjectFromLocalStorage = (name) => {
-  try {
-    return JSON.parse(localStorage.getItem(name));
-  } catch {
-    return {};
-  }
-};
-
 export const setObjectToLocalStorage = (name, value) => {
   localStorage.setItem(name, JSON.stringify(value));
 };
 
 export const getSelects = () => {
-  const workspaces = getObjectFromLocalStorage("workspaces");
-  const currentWorkspaceBoards = getObjectFromLocalStorage(
-    "currentWorkspaceBoards"
-  );
-
   const SELECTS = [
     {
       name: "Workspace",
       idChosen: CHOSEN_WORKSPACE_ID,
       idOptions: OPTIONS_WORKSPACE_ID,
-      options: workspaces,
+      options: ["workspace1", "workspace2"]
     },
     {
       name: "Board",
       idChosen: CHOSEN_BOARD_ID,
       idOptions: OPTIONS_BOARD_ID,
-      options: currentWorkspaceBoards,
+      options: ["board1", "board2"]
     },
   ];
-
-  console.log("SELECTS", SELECTS);
 
   return SELECTS;
 };

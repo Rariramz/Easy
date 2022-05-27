@@ -1,0 +1,125 @@
+{
+  "users": {
+    "user1_ID": {
+      "email": "user1@mail.ru",
+      "workspaces": {
+        "workspace1_ID": {
+          "name": "workspace1"
+        },
+        "workspace2_ID": {
+          "name": "workspace2"
+        }
+      },
+      "boards": {
+        "workspace1_ID": {
+          "board1(1)_ID": {
+            "name": "board1"
+          },
+          "board2(1)_ID": {
+            "name": "board2"
+          }
+        },
+        "workspace2_ID": {
+          "board1(2)_ID": {
+            "name": "board1"
+          },
+          "board2(2)_ID": {
+            "name": "board2"
+          },
+          "board3(2)_ID": {
+            "name": "board3"
+          }
+        }
+      },
+      "sections": {
+        "board1(1)_ID": {
+          "section1(1)_ID": {
+            "name": "section1",
+            "color": "#000000"
+          },
+          "section2(1)_ID": {
+            "name": "section2",
+            "color": "#000000"
+          }
+        },
+        "board2(1)_ID": {
+          "section1(2)_ID": {
+            "name": "section1",
+            "color": "#000000"
+          }
+        },
+        "board3(1)_ID": {
+          "section1(3)_ID": {
+            "name": "section1",
+            "color": "#000000"
+          }
+        }
+      },
+      "tasks": {
+        "section1(1)_ID": {
+          "task1_ID": {
+            "name": "task1",
+            "details": [
+              {"tag": "p", "content": "Some information"},
+              {"tag": "ul", "content": [
+                {"tag": "li", "content": "checkpoint 1"},
+                {"tag": "li", "content": "checkpoint 2"}
+              ]},
+              {"tag": "p", "content": "Some information"}
+            ]
+          },
+          "task2_ID": {
+            "name": "task2",
+            "details": [
+              {"tag": "p", "content": "Some information"},
+              {"tag": "ul", "content": [
+                {"tag": "li", "content": "checkpoint 1"},
+                {"tag": "li", "content": "checkpoint 2"}
+              ]},
+              {"tag": "p", "content": "Some information"}
+            ]
+          }
+        },
+        "section2(1)_ID": {
+          "task3_ID": {
+            "name": "task3",
+            "details": [
+              {"tag": "p", "content": "Some information"},
+              {"tag": "ul", "content": [
+                {"tag": "li", "content": "checkpoint 1"},
+                {"tag": "li", "content": "checkpoint 2"}
+              ]},
+              {"tag": "p", "content": "Some information"}
+            ]
+          }
+        },
+        "section1(2)_ID": {
+          "task4_ID": {
+            "name": "task4",
+            "details": [
+              {"tag": "p", "content": "Some information"},
+              {"tag": "ul", "content": [
+                {"tag": "li", "content": "checkpoint 1"},
+                {"tag": "li", "content": "checkpoint 2"}
+              ]},
+              {"tag": "p", "content": "Some information"}
+            ]
+          }
+        },
+        "section3(1)_ID": {
+          "task5_ID": {
+            "name": "task5",
+            "details": [
+              {"tag": "p", "content": "Some information"},
+              {"tag": "ul", "content": [
+                {"tag": "li", "content": "checkpoint 1"},
+                {"tag": "li", "content": "checkpoint 2"}
+              ]},
+              {"tag": "p", "content": "Some information"}
+            ]
+          }
+        }
+      }
+    }
+  }
+}
